@@ -1,9 +1,8 @@
 package com.wufuqiang.format.date;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class DateHelper {
 
@@ -21,10 +20,22 @@ public class DateHelper {
     }
 
 
+
     public static void main(String[] args) {
 //        System.out.println(getTodayBegin());
 //        System.out.println(getYesterdayBegin());
         System.out.println(getDateString());
+
+        System.out.println(LocalDate.now());
+        System.out.println(new Date());
+
+        System.out.println(java.sql.Date.valueOf(LocalDate.now()));
+        System.out.println(java.sql.Date.valueOf(LocalDateTime.now().toLocalDate()));
+
+        System.out.println(java.sql.Date.from(Instant.now()));
+        System.out.println(new java.sql.Timestamp(Instant.now().toEpochMilli()));
+
+        System.out.println(ZoneId.getAvailableZoneIds());
 
     }
 
